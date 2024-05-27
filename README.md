@@ -30,3 +30,11 @@ Thus we can use models trained in continuous state spaces to model discrete stat
 ![Alt text](experiments/media/samples.png)
 
 ![Alt text](experiments/media/samples.gif)
+
+### How to use code
+
+Download the [checkpoint](https://drive.google.com/drive/folders/1FlYhDRgc0GA2qNCOB8IvoBRV-62BzCVR) and copy the directory to the `checkpoint` folder (`checkpoint/r4ftq2q0/last.ckpt` and `checkpoint/r4ftq2q0/r4ftq2q0.yaml` should now exist).
+
+Subsequently, run the `main.py` file to generate the samples above.
+Importantly, you can use your own score modeling network or denoising diffusion model by converting the output of the model to the Ehrenfest rates as detailed in our paper.
+The tau-leaping algorithm is very important to obtain usable sampling speeds.
