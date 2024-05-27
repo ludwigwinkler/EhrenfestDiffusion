@@ -18,8 +18,10 @@ Additionally, we suggest an algorithm for training the time-reversal of Markov j
 tional expectations and can thus be directly related to denoising score matching. We demonstrate our methods in multiple
 convincing numerical experi- ments.
 
+### TL;DR
 For the first time, we can directly link state-discrete continuous-time diffusion models to their time- and
 space-continuous (SDE-based) counterparts, i.e. score-based generative modeling. Credits go to the Ehrenfest process.
+Thus we can use models trained in continuous state spaces to model discrete state spaces with the Ehrenfest process.
 
 ![Alt text](experiments/media/essence.jpeg)
 
