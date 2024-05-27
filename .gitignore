@@ -31,7 +31,7 @@ MANIFEST
 **/checkpoints/**
 **/data/**
 **/experiments/**
-!checkpoints/r4ftq2q0
+!checkpoints/r4ftq2q0/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
