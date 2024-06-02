@@ -1,23 +1,26 @@
-from src.Utils import check_ckpt
-from src.Logger import wandb_logger
-from src.LightningModule import DiscreteDiffusionLightingModule
-from src.Callbacks import get_callbacks
-from src import Losses
-from src.Losses import EhrenfestVariational, EhrenfestRegression
-from config import Config
-import src.models
-from simple_parsing import ArgumentGenerationMode, ArgumentParser, NestedMode
-from src.Logger import flatten_config
-from lightning.pytorch.tuner import Tuner
-import dataclasses
-import functools as ft
-import sys
-import os.path
-import yaml
-
-import lightning
-import pyrootutils
+# %%
 import torch
+import pyrootutils
+import lightning
+import yaml
+import os.path
+import sys
+import functools as ft
+import dataclasses
+from lightning.pytorch.tuner import Tuner
+from src.Logger import flatten_config
+from simple_parsing import ArgumentGenerationMode, ArgumentParser, NestedMode
+import src.models
+from config import Config
+from src.Losses import EhrenfestVariational, EhrenfestRegression
+from src import Losses
+from src.Callbacks import get_callbacks
+from src.LightningModule import DiscreteDiffusionLightingModule
+from src.Logger import wandb_logger
+from src.Utils import check_ckpt
+
+if 'VSCODE_PID' in os.environ:  # workaroud for argument vs interactive window clash
+    sys.argv = ['']
 
 path = pyrootutils.find_root(search_from=__file__, indicator=["config", "src"])
 pyrootutils.set_root(
@@ -51,6 +54,8 @@ dm = getattr(src.DataModules, f"{cfg.data.type}DataModule")(num_states=cfg.data.
 
 logger = wandb_logger(cfg)
 print(cfg)
+
+sys.exit()
 
 # with open('config.yaml', 'w') as file:
 #     yaml.dump(dataclasses.asdict(cfg), file, default_flow_style=False, sort_keys=True)
@@ -190,7 +195,7 @@ if torch.cuda.device_count() == 1 and cfg.optimization.tune_batch_size:
     train_module.hparams.optimization.batch_size = batch_size
     dm.batch_size = batch_size
     assert next(iter(dm.train_dataloader())).shape[
-               0] == batch_size, f"{next(iter(dm.train_dataloader())).shape[0]} vs {batch_size}"
+        0] == batch_size, f"{next(iter(dm.train_dataloader())).shape[0]} vs {batch_size}"
     logger.experiment.config.update({"tuned_batch_size": batch_size})
 
 if cfg.train:
@@ -201,7 +206,7 @@ else:
     if cfg.load_checkpoint:
         try:
             ckpt_path = str(path) + "/checkpoints/" + \
-                        f'{cfg.checkpoint}/last.ckpt'
+                f'{cfg.checkpoint}/last.ckpt'
             ckpt = check_ckpt(cfg, ckpt_path)
             train_module.load_state_dict(ckpt["state_dict"], strict=True)
             print(f"Loaded checkpoint successfully from {ckpt_path}")
