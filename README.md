@@ -33,7 +33,7 @@ converges to the Ornstein-Uhlenbeck process which underpins many of the generati
 The reverse time rate of an Ehrenfest process can be obtained through the ratio of the conditional probabilities of the forward process $p_{t|0}(x | x_0)$ under the expectation of the initial condition of the forward process $p_{0|t}(x_0 | x)$.
 In case of the scaled Ehrenfest process $\tilde{E}_S$, the reverse rates can be obtained in the limit of infinite states by the score of the corresponding Ornstein-Uhlenbeck process:
 
-$$\underbrace{\mathbb{E}_{x_0 \sim p_{0|t}(x_0|x)} \left[ \frac{p_{t|0}\big(x \pm \frac{2}{\sqrt{S}} | x_0\big)}{p_{t|0}(x|x_0)} \right]}_{\text{Ehrenfest Discrete Birth Death Rate}} \approx \underbrace{1 \pm \frac{2}{\sqrt{S}} \nabla \log p_t^{\text{OU}}(x)}_{\text{Ornstein-Uhlenbeck Score}} $$
+$$\mathbb{E}_{x_0 \sim p_{0|t}(x_0|x)} \left[ \frac{p_{t|0}\big(x \pm \frac{2}{\sqrt{S}} | x_0\big)}{p_{t|0}(x|x_0)} \right] \approx 1 \pm \frac{2}{\sqrt{S}} \nabla \log p_t^{\text{OU}}(x) $$
 
 Thus, we can model reverse-time, discrete-state rates with models predicting the continuous-time score such as DDPM. 
 
