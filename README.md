@@ -21,7 +21,7 @@ For the first time, we can directly link state-discrete continuous-time diffusio
 space-continuous (SDE-based) counterparts, i.e. score-based generative modeling. Credits go to the Ehrenfest process.
 Thus we can use models trained in continuous state spaces to model discrete state spaces with the Ehrenfest process and vice versa.
 
-The Ehrenfest $E_S(t)$ process in discrete state spaces is characterized by the birth death rates $r_t(x \pm 1 |x)$ that denote the rate in which the process changes states $x \in \{0, \ldots, S\}$:
+The Ehrenfest $E_S(t)$ process in discrete state spaces is characterized by the birth death rates $r_t(x \pm 1 |x)$ that denote the rate in which the process changes states $x \in \\{0, \ldots, S\\}$:
 $$r_t(x+1|x) = \frac{1}{2}(S-x) \quad \quad \text{and} \quad \quad r_t(x - 1|x) = \frac{x}{2}.$$ 
 
 In the limit of infinite states $S$ the scaled Ehrenfest process $\tilde{E}_S$,
