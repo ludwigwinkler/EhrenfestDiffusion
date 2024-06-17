@@ -25,7 +25,9 @@ The Ehrenfest $E_S(t)$ process in discrete state spaces is characterized by the 
 $$r_t(x+1|x) = \frac{1}{2}(S-x) \quad \quad \text{and} \quad \quad r_t(x - 1|x) = \frac{x}{2}.$$ 
 
 In the limit of infinite states $S$ the scaled Ehrenfest process $\tilde{E}_S$,
+
 $$ \tilde{E}_S(t) = \frac{2}{\sqrt{S}} \left( E_S(t) - \frac{S}{2} \right)$$
+
 converges to the Ornstein-Uhlenbeck process which underpins many of the generative diffusion models.
 
 The reverse time rate of an Ehrenfest process can be obtained through the ratio of the conditional probabilities of the forward process $p_{t|0}(x | x_0)$ under the expectation of the initial condition of the forward process $p_{0|t}(x_0 | x)$.
