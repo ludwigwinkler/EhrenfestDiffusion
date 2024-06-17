@@ -33,7 +33,7 @@ converges to the Ornstein-Uhlenbeck process which underpins many of the generati
 The reverse time rate of an Ehrenfest process can be obtained through the ratio of the conditional probabilities of the forward process $p_{t|0}(x | x_0)$ under the expectation of the initial condition of the forward process $p_{0|t}(x_0 | x)$.
 In case of the scaled Ehrenfest process $\tilde{E}_S$, the reverse rates can be obtained in the limit of infinite states by the score of the corresponding Ornstein-Uhlenbeck process:
 
-$$ \sim \mathbb{E} \pm \text{OU}  \nabla \log $$
+$$ \sim \mathbb{E} \pm \text{OU}  \nabla \log  \sqrt{S} $$
 
 $$\mathbb{E}_{x_0 \sim p_{0|t}(x_0|x)} \left[ \frac{p_{t|0}\left(x \pm \frac{2}{\sqrt{S}} | x_0 \right)}{p_{t|0}(x|x_0)} \right] $$
 
