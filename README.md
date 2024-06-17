@@ -37,7 +37,7 @@ $$ \sim \mathbb{E} \pm \text{OU}  \nabla \log  \sqrt{S} $$
 
 $$ \mathbb{E}_{x_0 \sim p_{0 \| t}(x_0 | x) } $$
 
-$\mathbb{E}_{x_0 \sim p(x_0|x)} \left[ \frac{p_{t|0}\left(x \pm \frac{2}{\sqrt{S}} | x_0 \right)}{p_{t|0}(x|x_0)} \right] \approx 1 \pm \frac{2}{\sqrt{S}} \nabla \log p_t^{\text{OU}}(x)$
+$\mathbb{E}_{x_0 \sim p(x_0|x)} \left[ \frac{p\left(x \pm \frac{2}{\sqrt{S}} | x_0 \right)}{p(x|x_0)} \right] \approx 1 \pm \frac{2}{\sqrt{S}} \nabla \log p_t^{\text{OU}}(x)$
 
 Thus, we can model reverse-time, discrete-state rates with models predicting the continuous-time score such as DDPM. 
 
